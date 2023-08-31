@@ -1,15 +1,13 @@
 // * RECUPERATION DES IMAGES et TEXTES
 
 let bannerImg = document.querySelector(".banner-img");
-console.log(bannerImg);
 
 let text = document.querySelector("p");
-console.log(text);
 
 let arrowleft = document.querySelector(".arrow_left");
 let arrowRight = document.querySelector(".arrow_right");
 
-
+let dots = document.querySelector (".dots");
 
 //* IMAGES EN TABLEAUX
 
@@ -32,19 +30,13 @@ const slides = [
     tagLine: "Autocollants <span>avec découpe laser sur mesure</span>",
   },
 ];
-console.log(slides);
 
 //DOTS
-let dots = [];//crée une liste vide
 for (let i = 0; i < slides.length; i++) {
   let span = document.createElement("span"); // Creation de spans
-  span.classList.add("dot"); //ajout de la class dot à span
-  dots.push(span);//ajoute  span à la liste dots
+  span.classList.add("dot"); //ajout de la class dot à span 
+  dots.appendChild(span); // Ajouter span a class dots
 
-  let div = document.querySelector(".dots"); // Récupére .dots
-  div.appendChild(span); // Ajouter le nouvel élément au parent di dots
-
-  
   if (i === 0) {
     span.classList.add("dot_selected");
   }
