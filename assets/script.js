@@ -1,4 +1,4 @@
-// * RECUPERATION DES IMAGES
+// * RECUPERATION DES IMAGES et TEXTES
 
 let bannerImg = document.querySelector(".banner-img");
 console.log(bannerImg);
@@ -44,6 +44,11 @@ for (let i = 0; i < slides.length; i++) {
 
   let div = document.querySelector(".dots"); // Récupérer un élément parent existant
   div.appendChild(span); // Ajouter le nouvel élément au parent di dots
+
+  
+  if (i === 0) {
+    span.classList.add("dot_selected");
+  }
 }
 
 //FONCTION
@@ -60,10 +65,10 @@ arrowleft.addEventListener("click", () => {
 function changeSlide(direction) {
   console.log(direction);
   if (direction === "next") {
-    if (visibleSlide >= slides.length - 1) visibleSlide = -1;
+    if (visibleSlide >= slides.length - 1) visibleSlide = -1;  //verification du sens de défilement derniere image initialisation à -1 et incrementation ++
     visibleSlide++;
   } else {
-    if (visibleSlide <= 0) visibleSlide = slides.length;
+    if (visibleSlide <= 0) visibleSlide = slides.length;  //verification du sens de défilement  premiere image initialisation à la taille du tableau et incrementation --
     visibleSlide--;
   }
 
