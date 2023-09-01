@@ -7,7 +7,7 @@ let text = document.querySelector("p");
 let arrowleft = document.querySelector(".arrow_left");
 let arrowRight = document.querySelector(".arrow_right");
 
-let dots = document.querySelector (".dots");
+let dots = document.querySelector ("div .dots");
 
 //* IMAGES EN TABLEAUX
 
@@ -31,16 +31,22 @@ const slides = [
   },
 ];
 
+
 //DOTS
+
 for (let i = 0; i < slides.length; i++) {
   let span = document.createElement("span"); // Creation de spans
   span.classList.add("dot"); //ajout de la class dot à span 
-  dots.appendChild(span); // Ajouter span a class dots
+  dots.appendChild(span); // Ajouter spans a la div
+  
 
-  if (i === 0) {
+  if (i == 0) {
     span.classList.add("dot_selected");
   }
+
+
 }
+
 
 //FONCTION
 let visibleSlide = 0;
@@ -67,11 +73,16 @@ function changeSlide(direction) {
 
   text.innerHTML = slides[visibleSlide].tagLine;
 
-  for (let i = 0; i < dots.length; i++) {
+span=document.querySelector("div .dots")
+  for (let i = 0; i <  span.length; i++) {
     if (i == visibleSlide) {
-      dots[i].classList.add("dot_selected");
-    } else {
-      dots[i].classList.remove("dot_selected");
+      span[i].classList.add("dot_selected");
+    } 
+    else {
+      span[i].classList.remove("dot_selected");
     }
+    
   }
+
+  
 }

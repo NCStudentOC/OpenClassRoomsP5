@@ -9,6 +9,8 @@ console.log(text);
 let arrowleft = document.querySelector(".arrow_left");
 let arrowRight = document.querySelector(".arrow_right");
 
+// let dots = document.querySelectorAll(".dot, .dot_selected");
+
 
 
 //* IMAGES EN TABLEAUX
