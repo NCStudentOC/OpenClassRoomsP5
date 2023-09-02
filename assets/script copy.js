@@ -9,6 +9,7 @@ let arrowRight = document.querySelector(".arrow_right");
 
 let dots = document.querySelector ("div .dots");
 
+
 //* IMAGES EN TABLEAUX
 
 const slides = [
@@ -38,16 +39,13 @@ for (let i = 0; i < slides.length; i++) {
   let span = document.createElement("span"); // Creation de spans
   span.classList.add("dot"); //ajout de la class dot à span 
   dots.appendChild(span); // Ajouter spans a la div
-  
 
   if (i == 0) {
     span.classList.add("dot_selected");
   }
-
-
 }
 
-
+let span=document.querySelectorAll("div .dot")
 //FONCTION
 let visibleSlide = 0;
 
@@ -73,8 +71,9 @@ function changeSlide(direction) {
 
   text.innerHTML = slides[visibleSlide].tagLine;
 
-span=document.querySelector("div .dots")
+
   for (let i = 0; i <  span.length; i++) {
+
     if (i == visibleSlide) {
       span[i].classList.add("dot_selected");
     } 
